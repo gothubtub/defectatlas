@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Defect Atlas</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body,#root{margin:0;padding:0;height:100%;background:#0a0b0e;}
+  body{font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  ::selection{background:rgba(52,211,166,.3);}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+  input::placeholder,textarea::placeholder{color:#4d5460;}
+  input.scrub{-webkit-appearance:none;appearance:none;background:transparent;outline:none;margin:0;padding:0;accent-color:transparent;}
+  input.scrub::-webkit-slider-thumb{-webkit-appearance:none;width:1px;height:1px;opacity:0;}
+  input.scrub::-moz-range-thumb{opacity:0;width:0;height:0;border:0;}
+  input.scrub::-webkit-slider-runnable-track{background:transparent;}
+  .scrolly::-webkit-scrollbar{width:8px;height:8px;}
+  .scrolly::-webkit-scrollbar-thumb{background:#252a33;border-radius:4px;}
+  .scrolly::-webkit-scrollbar-track{background:transparent;}
+  :focus-visible{outline:2px solid #34d3a6;outline-offset:2px;}
+  button{font-family:inherit;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

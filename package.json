@@ -1,0 +1,16 @@
+{
+  "name": "defect-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Defect Atlas — a visual defect map over uploaded artifact snapshots, for Jira Forge.",
+  "scripts": {
+    "build": "cd static/app && npm install && npm run build",
+    "lint:resolver": "node --check src/resolvers/index.js",
+    "test": "npm run lint:resolver && npm run build"
+  },
+  "dependencies": {
+    "@forge/api": "^8.0.4",
+    "@forge/resolver": "^2.0.0",
+    "@forge/storage": "^2.0.3"
+  }
+}

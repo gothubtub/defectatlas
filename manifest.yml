@@ -13,9 +13,9 @@ modules:
       resolver:
         function: resolver
       title: Defect Atlas
-      icon: resource:icon
+      icon: resource:app-assets;icon.svg
 
-  jiraCustomFieldType:
+  jira:customFieldType:
     - key: component-aspect-field
       name: Component-Aspect
       description: >-
@@ -26,7 +26,7 @@ modules:
       type: string
       readAccess:
         - "*"
-      collection: false
+      collection: none
 
   function:
     - key: resolver
@@ -35,33 +35,24 @@ modules:
 resources:
   - key: main
     path: static/app/dist
-  - key: icon
-    path: static/app/public/icon.svg
+  - key: app-assets
+    path: static/app/public
 
 app:
-  id: ari:cloud:ecosystem::app/00000000-0000-0000-0000-000000000000
+  id: ari:cloud:ecosystem::app/bad55b66-6ae3-4cda-b214-e4ff8c9d6957
   runtime:
     name: nodejs22.x
 
 permissions:
   scopes:
-    # Read/search issues, components, versions, projects for the mock-jira
-    # layer's real code path (src/resolvers/jira/realClient.js) and for the
-    # eventual live sync.
     - read:jira-work
-    # Push status/severity changes back to Jira (two-way sync, UC-02) and
-    # write project/issue entity properties (artifact + region storage).
     - write:jira-work
-    # Create the Component-Aspect custom field type instance and read
-    # project permission schemes for the Editor/Viewer role derivation.
     - manage:jira-configuration
-    # Editor/Viewer membership list (BRD §5 Workspace.members[]) — the one
-    # piece of state that intentionally lives in Forge storage rather than
-    # as a Jira entity, since it has no natural Jira home.
     - storage:app
+    - manage:jira-project
   content:
     styles:
       - unsafe-inline
   external:
     images:
-      - "*.atlassian.net"
+      - address: "*.atlassian.net"

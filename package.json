@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@forge/api": "^8.0.4",
+    "@forge/kvs": "^2.0.5",
     "@forge/resolver": "^2.0.0",
     "@forge/storage": "^2.0.3"
   }

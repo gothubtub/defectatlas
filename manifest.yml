@@ -35,6 +35,8 @@ modules:
 resources:
   - key: main
     path: static/app/dist
+    tunnel:
+      port: 5175
   - key: app-assets
     path: static/app/public
 
